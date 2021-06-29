@@ -1,0 +1,29 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --canvas-size: 300px;
+}
+
+.header {
+  text-align: center;
+}
+
+.canvas {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  outline: 2px solid black;
+  width: var(--canvas-size);
+  height: var(--canvas-size);
+  margin: auto;
+}
+
+.pixel {
+  width: calc(var(--canvas-size) / 16);
+  height: calc(var(--canvas-size) / 16);
+  border: 0.1px solid black;
+}
