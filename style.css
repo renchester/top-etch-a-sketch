@@ -6,16 +6,27 @@
 
 :root {
   --canvas-size: 300px;
+  --fill-color: rgb(219, 74, 74);
 }
 
 .header {
   text-align: center;
 }
 
+.container {
+  margin: auto;
+  padding: 2rem;
+  border: 5px solid red;
+  border-radius: 10px;
+  width: calc(var(--canvas-size) + 75px);
+  height: calc(var(--canvas-size) + 75px);
+}
+
 .canvas {
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
+  border-radius: 4px;
   outline: 2px solid black;
   width: var(--canvas-size);
   height: var(--canvas-size);
@@ -26,4 +37,30 @@
   width: calc(var(--canvas-size) / 16);
   height: calc(var(--canvas-size) / 16);
   border: 0.1px solid black;
+}
+
+.pixel-fill {
+  background-color: var(--fill-color);
+}
+
+.btn-container {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}
+
+.btn {
+  margin: 1rem 1.2rem;
+  border: none;
+  border-radius: 50px;
+  background-color: rgb(255, 208, 0);
+  height: 50px;
+  width: 50px;
+  font-size: 0.6rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+  color: rgb(54, 48, 48);
+  cursor: pointer;
 }
