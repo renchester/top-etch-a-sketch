@@ -5,11 +5,12 @@
 }
 
 :root {
-  --canvas-dimension: 320px;
+  --canvas-dimension: 500px;
   --canvas-size: 16;
   --fill-color: rgb(116, 116, 116);
   --primary-color: rgb(197, 0, 0);
-  --button-position: -5.7rem;
+  --button-position: -8rem;
+  --button-size: 75px;
 
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -21,6 +22,7 @@ body {
 
 .header {
   text-align: center;
+  font-size: 3rem;
   font-family: 'Bungee Shade', cursive;
   /* font-family: 'Fredericka the Great', cursive; */
   color: white;
@@ -32,9 +34,9 @@ body {
   background-color: var(--primary-color);
   margin: auto;
   padding: 2rem;
-  border-radius: 10px;
-  width: calc(var(--canvas-dimension) + 4em);
-  height: calc(var(--canvas-dimension) + 4em);
+  border-radius: 20px;
+  width: calc(var(--canvas-dimension) + 7em);
+  height: calc(var(--canvas-dimension) + 7em);
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.65);
 }
 
@@ -114,12 +116,12 @@ body {
 .btn-gray,
 .btn-warm,
 .btn-cool {
-  margin: 1rem 1.2rem;
+  margin: 1.5rem 1.2rem;
   border-radius: 50px;
   background-color: rgb(255, 208, 0);
-  height: 60px;
-  width: 60px;
-  font-size: 0.6rem;
+  height: var(--button-size);
+  width: var(--button-size);
+  font-size: 0.9rem;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 700;
   color: rgb(54, 48, 48);
@@ -142,6 +144,7 @@ body {
 .slider-label {
   color: white;
   font-family: 'Frijole', Arial, Helvetica, sans-serif;
+  font-size: 1.8rem;
   text-align: center;
   margin-top: 0.8rem;
 }
@@ -149,13 +152,16 @@ body {
 .slider-container {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin: 0.5rem auto;
+  width: 100%;
 }
 
 .slider {
   -webkit-appearance: none;
   appearance: none;
-  width: 100%;
+  width: 240px;
+  min-width: 100px;
   height: 12px;
   background: white;
   border-radius: 50px;
@@ -181,14 +187,14 @@ body {
 }
 
 .btn-slider {
-  margin-left: 1em;
-  width: 30px;
-  height: 30px;
+  margin-left: 1.2em;
+  width: 40px;
+  height: 40px;
   border-radius: 50px;
   padding: 0 0.2rem;
   background-color: rgb(255, 208, 0);
   font-family: 'Audiowide', sans-serif;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
 }
 
 /* QUERY MODAL WINDOW */
