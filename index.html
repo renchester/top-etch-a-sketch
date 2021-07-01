@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee+Shade&family=Coda:wght@800&family=Fredericka+the+Great&family=Frijole&display=swap"
+      rel="stylesheet"
+    />
     <title>Etch-a-sketch</title>
   </head>
   <body>
@@ -17,17 +24,22 @@
           Maximum canvas size exceeded. Size reverted to 75 x 75px
         </p>
       </div>
-    </div>
+      <div class="btn-container">
+        <button class="btn btn-brush">ERASER</button>
+        <button class="btn btn-erase">ERASE ALL</button>
+        <button class="btn btn-toggle">STOP DRAWING</button>
+        <button class="btn btn-new">NEW CANVAS</button>
+      </div>
 
-    <div class="colors-container">
-      <button class="btn btn-rainbow">RAINBOW</button>
-      <button class="btn btn-warm">WARM</button>
-      <button class="btn btn-cool">COOL</button>
-      <button class="btn btn-gray">GRAYSCALE</button>
-      <button class="btn btn-picker">PICKER</button>
+      <div class="colors-container">
+        <button class="btn btn-random">RANDOM</button>
+        <button class="btn btn-gray">GRAYSCALE</button>
+        <!-- <button class="btn btn-picker">PICKER</button> -->
+        <input name="Color Picker" type="color" class="btn btn-picker" />
+      </div>
     </div>
-
     <div class="controls-container">
+      <p class="slider-label">CHANGE GRID</p>
       <div class="slider-container">
         <input
           type="range"
@@ -37,13 +49,7 @@
           class="slider"
           id="myRange"
         />
-        <button class="btn-slider">CHANGE GRID</button>
-      </div>
-      <div class="btn-container">
-        <button class="btn btn-brush">ERASER</button>
-        <button class="btn btn-erase">ERASE ALL</button>
-        <button class="btn btn-toggle">STOP DRAWING</button>
-        <button class="btn btn-new">NEW CANVAS</button>
+        <button class="btn btn-slider">GO</button>
       </div>
     </div>
 
