@@ -108,6 +108,8 @@ function erasePixel(e) {
 function toggleErase(e) {
   eraseState = !eraseState;
   btnEraseBrush.textContent = eraseState ? 'Brush' : 'Eraser';
+
+  btnEraseBrush.classList.toggle('btn-active');
 }
 
 function eraseAllFills(e) {
@@ -122,12 +124,14 @@ function toggleDrawing(e) {
 
   brushState = !brushState;
   btnToggle.textContent = brushState ? 'Stop drawing' : 'Start drawing';
+
+  btnToggle.classList.toggle('btn-active');
 }
 
 ////// Color-related functions
 
 function changeColor(e) {
-  if (!e.target.classList.contains('btn')) return;
+  if (!e.target.classList.contains('btn-color')) return;
   colorState = e.target.id.split('-').pop();
 
   makeActive(e.target);
@@ -162,8 +166,8 @@ function getGrayColor(e) {
 
 function makeActive(target) {
   const childrenArr = Array.from(colorsContainer.children);
-  childrenArr.forEach((btn) => btn.classList.remove('btn-active'));
-  target.classList.add('btn-active');
+  childrenArr.forEach((btn) => btn.classList.remove('btn-color-active'));
+  target.classList.add('btn-color-active');
 }
 
 // Event listeners
