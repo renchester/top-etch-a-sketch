@@ -10,20 +10,36 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee+Shade&family=Coda:wght@800&family=Fredericka+the+Great&family=Frijole&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Audiowide&family=Bungee+Shade&family=Coda:wght@800&family=Fredericka+the+Great&family=Frijole&display=swap"
       rel="stylesheet"
     />
     <title>Etch-a-sketch</title>
   </head>
   <body>
-    <h1 class="header">ETCH-A-SKETCH</h1>
     <div class="container">
+      <h1 class="header">ETCH-A-SKETCH</h1>
       <div class="canvas"></div>
       <div class="warning-container hidden">
         <p class="warning-label">
           Maximum canvas size exceeded. Size reverted to 75 x 75px
         </p>
       </div>
+
+      <div class="controls-container">
+        <p class="slider-label">CHANGE GRID SIZE</p>
+        <div class="slider-container">
+          <input
+            type="range"
+            min="3"
+            max="75"
+            value="16"
+            class="slider"
+            id="myRange"
+          />
+          <button class="btn btn-slider">GO</button>
+        </div>
+      </div>
+
       <div class="btn-container">
         <button class="btn btn-brush">ERASER</button>
         <button class="btn btn-erase">ERASE ALL</button>
@@ -32,24 +48,10 @@
       </div>
 
       <div class="colors-container">
-        <button class="btn btn-random" id="btn-random">RANDOM</button>
-        <button class="btn btn-warm" id="btn-warm">WARM</button>
-        <button class="btn btn-cool" id="btn-cool">COOL</button>
-        <button class="btn btn-gray" id="btn-gray">GRAY SCALE</button>
-      </div>
-    </div>
-    <div class="controls-container">
-      <p class="slider-label">CHANGE GRID</p>
-      <div class="slider-container">
-        <input
-          type="range"
-          min="3"
-          max="75"
-          value="16"
-          class="slider"
-          id="myRange"
-        />
-        <button class="btn btn-slider">GO</button>
+        <button class="btn-color btn-random" id="btn-random">RANDOM</button>
+        <button class="btn-color btn-warm" id="btn-warm">WARM</button>
+        <button class="btn-color btn-cool" id="btn-cool">COOL</button>
+        <button class="btn-color btn-gray" id="btn-gray">GRAY SCALE</button>
       </div>
     </div>
 

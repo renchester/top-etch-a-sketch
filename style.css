@@ -18,25 +18,25 @@
 body {
   background: rgb(53, 53, 53);
   position: relative;
+  height: 100vh;
 }
 
 .header {
   text-align: center;
   font-size: 3rem;
-  font-family: 'Bungee Shade', cursive;
+  font-family: 'Bungee Shade', Arial, Helvetica, monospace, cursive;
   /* font-family: 'Fredericka the Great', cursive; */
   color: white;
-  padding: 1.2rem 0;
 }
 
 .container {
   position: relative;
   background-color: var(--primary-color);
-  margin: auto;
-  padding: 2rem;
+  margin: 5vh auto 0;
+  padding: 1.5rem;
   border-radius: 20px;
-  width: calc(var(--canvas-dimension) + 7em);
-  height: calc(var(--canvas-dimension) + 7em);
+  width: calc(var(--canvas-dimension) + 6em);
+  height: calc(var(--canvas-dimension) + 14em);
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.65);
 }
 
@@ -101,6 +101,7 @@ body {
 }
 
 .btn,
+.btn-color,
 .overlay {
   cursor: pointer;
   text-transform: uppercase;
@@ -117,7 +118,7 @@ body {
 .btn-warm,
 .btn-cool {
   margin: 1.5rem 1.2rem;
-  border-radius: 50px;
+  border-radius: 7px;
   background-color: rgb(255, 208, 0);
   height: var(--button-size);
   width: var(--button-size);
@@ -128,8 +129,14 @@ body {
 }
 
 .btn-active {
+  color: white;
+  background-color: black;
+}
+
+.btn-color-active {
   outline: 3px solid white;
   box-shadow: 0px 0px 10px -5px white;
+  color: white;
 }
 
 .colors-container {
@@ -137,30 +144,39 @@ body {
 }
 
 .controls-container {
+  position: absolute;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 2.2em;
 }
 
 .slider-label {
   color: white;
-  font-family: 'Frijole', Arial, Helvetica, sans-serif;
-  font-size: 1.8rem;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  font-size: 1.9rem;
   text-align: center;
-  margin-top: 0.8rem;
+  margin: 1.2em auto 0.4em;
 }
 
 .slider-container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0.5rem auto;
+  margin: 0 auto 0.5rem;
   width: 100%;
 }
 
 .slider {
   -webkit-appearance: none;
+  position: absolute;
   appearance: none;
-  width: 240px;
+  width: 340px;
   min-width: 100px;
   height: 12px;
   background: white;
@@ -187,6 +203,8 @@ body {
 }
 
 .btn-slider {
+  position: absolute;
+  right: 75px;
   margin-left: 1.2em;
   width: 40px;
   height: 40px;
