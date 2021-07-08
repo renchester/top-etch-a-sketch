@@ -9,6 +9,7 @@
   --canvas-size: 16;
   --fill-color: rgb(116, 116, 116);
   --primary-color: rgb(197, 0, 0);
+  --secondary-color: rgb(235, 192, 1);
   --button-position: -8rem;
   --button-size: 75px;
 
@@ -21,13 +22,7 @@ body {
   height: 100vh;
 }
 
-.header {
-  text-align: center;
-  font-size: 3rem;
-  font-family: 'Bungee Shade', Arial, Helvetica, monospace, cursive;
-  /* font-family: 'Fredericka the Great', cursive; */
-  color: white;
-}
+/*  CONTAINER */
 
 .container {
   position: relative;
@@ -37,7 +32,14 @@ body {
   border-radius: 20px;
   width: calc(var(--canvas-dimension) + 6em);
   height: calc(var(--canvas-dimension) + 14em);
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.65);
+  box-shadow: 0px 10px 0px 10px #ffa2a2;
+}
+
+.header {
+  text-align: center;
+  font-size: 3rem;
+  font-family: 'Bungee Shade', Arial, Helvetica, monospace, cursive;
+  color: white;
 }
 
 .canvas {
@@ -51,7 +53,7 @@ body {
   align-content: flex-start;
   background-color: white;
   border-radius: 2px;
-  outline: 2.4px solid black;
+  outline: 3px solid black;
   outline-offset: -1px;
   width: calc(var(--canvas-dimension) + 0.5px);
   height: calc(var(--canvas-dimension) + 0.5px);
@@ -85,6 +87,8 @@ body {
   font-size: 0.5rem;
 }
 
+/*  BUTTONS */
+
 .btn-container,
 .colors-container {
   display: flex;
@@ -100,6 +104,10 @@ body {
   left: var(--button-position);
 }
 
+.colors-container {
+  right: var(--button-position);
+}
+
 .btn,
 .btn-color,
 .overlay {
@@ -107,6 +115,10 @@ body {
   text-transform: uppercase;
   text-align: center;
   border: none;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 900;
+  color: rgb(54, 48, 48);
 }
 
 .btn-brush,
@@ -119,29 +131,26 @@ body {
 .btn-cool {
   margin: 1.5rem 1.2rem;
   border-radius: 7px;
-  background-color: rgb(255, 208, 0);
+  background-color: var(--secondary-color);
   height: var(--button-size);
   width: var(--button-size);
-  font-size: 0.9rem;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 700;
-  color: rgb(54, 48, 48);
+  box-shadow: 0px 4px 0px 4px rgb(231, 231, 231);
+  transition: transform ease-out 500ms;
 }
 
 .btn-active {
-  color: white;
-  background-color: black;
-}
-
-.btn-color-active {
-  outline: 3px solid white;
-  box-shadow: 0px 0px 10px -5px white;
+  background-color: rgb(77, 77, 77);
   color: white;
 }
 
-.colors-container {
-  right: var(--button-position);
+.btn-color-active,
+.btn-color:active {
+  background-color: rgb(214, 134, 14);
+  box-shadow: 0px 0px 0px 4px rgb(231, 231, 231);
+  transform: translateY(3px);
 }
+
+/*  SLIDER */
 
 .controls-container {
   position: absolute;
@@ -158,9 +167,9 @@ body {
 .slider-label {
   color: white;
   font-family: 'Poppins', Arial, Helvetica, sans-serif;
-  font-size: 1.9rem;
+  font-size: 1.75rem;
   text-align: center;
-  margin: 1.2em auto 0.4em;
+  margin-bottom: 0.5em;
 }
 
 .slider-container {
@@ -194,11 +203,11 @@ body {
 .slider::-moz-range-thumb {
   -webkit-appearance: none;
   appearance: none;
-  border: none;
-  width: 10px;
+  border: 4px solid rgb(71, 71, 71);
+  width: 5px;
   height: 20px;
   opacity: 1;
-  background: rgb(255, 66, 66);
+  background: white;
   cursor: pointer;
 }
 
@@ -210,9 +219,9 @@ body {
   height: 40px;
   border-radius: 50px;
   padding: 0 0.2rem;
-  background-color: rgb(255, 208, 0);
-  font-family: 'Audiowide', sans-serif;
-  font-size: 1.2rem;
+  background-color: var(--secondary-color);
+  font-size: 1.1rem;
+  box-shadow: 0px 2px 0px 2px white;
 }
 
 /* QUERY MODAL WINDOW */
@@ -223,15 +232,14 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 45%;
-  max-width: 240px;
+  max-width: 320px;
   z-index: 5;
-  padding: 1.2em;
   border-radius: 12px;
-  background-color: rgb(230, 180, 17);
+  background-color: var(--secondary-color);
   text-align: center;
-  font-dim--canvas-dimension: 1.2rem;
   font-family: 'Teko', sans-serif;
-  color: white;
+  color: black;
+  padding: 1.5em 1.5em 1em;
 }
 
 .query-container {
@@ -240,15 +248,14 @@ body {
 }
 
 .query-element {
-  margin: 0.2rem 0;
+  margin: 0.4rem 0;
+  font-size: 1.2rem;
 }
 
 .query-label {
   line-height: 1.15;
-}
-
-.query-sublabel {
-  font-dim--canvas-dimension: 0.75em;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .query-input,
@@ -267,12 +274,12 @@ body {
 }
 
 .btn-query {
-  width: 50%;
+  width: 40%;
   align-self: center;
-  font-family: 'Press Start 2P', cursive, Arial, Helvetica, sans-serif;
-  font-dim--canvas-dimension: 1.1em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
   margin-top: 0.6rem;
-  padding: 0.1em 0.3em;
+  padding: 0.6em 0.3em;
   border: none;
   background-color: white;
   border-radius: 50px;
