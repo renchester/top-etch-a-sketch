@@ -19,7 +19,6 @@
 body {
   background: rgb(53, 53, 53);
   position: relative;
-  height: 100vh;
 }
 
 /*  CONTAINER */
@@ -290,6 +289,29 @@ body {
   border: none;
   background-color: white;
   border-radius: 50px;
+}
+
+/* FOOTER */
+
+footer {
+  margin: auto;
+  width: 100%;
+  margin-top: 2.4rem;
+}
+
+.footer-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-desc {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: rgb(224, 224, 224);
+  padding-left: 1em;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.8rem;
 }
 
 /*  HELPER STYLES */

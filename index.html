@@ -16,65 +16,82 @@
     <title>Etch-a-sketch</title>
   </head>
   <body>
-    <div class="container">
-      <h1 class="header">ETCH-A-SKETCH</h1>
-      <div class="canvas"></div>
-      <div class="warning-container hidden">
-        <p class="warning-label">
-          Maximum canvas size exceeded. Size reverted to 75 x 75px
-        </p>
-      </div>
+    <main>
+      <div class="container">
+        <h1 class="header">ETCH-A-SKETCH</h1>
+        <div class="canvas"></div>
+        <div class="warning-container hidden">
+          <p class="warning-label">
+            Maximum canvas size exceeded. Size reverted to 75 x 75px
+          </p>
+        </div>
 
-      <div class="controls-container">
-        <p class="slider-label">CHANGE GRID SIZE</p>
-        <div class="slider-container">
-          <button class="btn btn-border">BORDER?</button>
-          <input
-            type="range"
-            min="3"
-            max="75"
-            value="16"
-            class="slider"
-            id="myRange"
-          />
-          <button class="btn btn-slider">GO</button>
+        <div class="controls-container">
+          <p class="slider-label">CHANGE GRID SIZE</p>
+          <div class="slider-container">
+            <button class="btn btn-border">BORDER?</button>
+            <input
+              type="range"
+              min="3"
+              max="75"
+              value="16"
+              class="slider"
+              id="myRange"
+            />
+            <button class="btn btn-slider">GO</button>
+          </div>
+        </div>
+
+        <div class="btn-container">
+          <button class="btn btn-brush">ERASER</button>
+          <button class="btn btn-erase">ERASE ALL</button>
+          <button class="btn btn-toggle">STOP DRAWING</button>
+          <button class="btn btn-new">NEW CANVAS</button>
+        </div>
+
+        <div class="colors-container">
+          <button class="btn-color btn-random" id="btn-random">RANDOM</button>
+          <button class="btn-color btn-warm" id="btn-warm">WARM</button>
+          <button class="btn-color btn-cool" id="btn-cool">COOL</button>
+          <button class="btn-color btn-gray" id="btn-gray">GRAY SCALE</button>
         </div>
       </div>
 
-      <div class="btn-container">
-        <button class="btn btn-brush">ERASER</button>
-        <button class="btn btn-erase">ERASE ALL</button>
-        <button class="btn btn-toggle">STOP DRAWING</button>
-        <button class="btn btn-new">NEW CANVAS</button>
+      <div class="overlay-div"></div>
+
+      <div class="query-element query-modal hidden">
+        <form action="" method="get" class="query-element query-container">
+          <label for="round-query" class="query-element query-label"
+            >What should the grid size be?</label
+          >
+          <p class="query-element query-sublabel">Default: 16x16</p>
+          <input
+            type="number"
+            name="round-query"
+            min="3"
+            max="75"
+            value="16"
+            class="query-element query-input"
+          />
+          <button class="btn query-element btn-query">OK</button>
+        </form>
       </div>
-
-      <div class="colors-container">
-        <button class="btn-color btn-random" id="btn-random">RANDOM</button>
-        <button class="btn-color btn-warm" id="btn-warm">WARM</button>
-        <button class="btn-color btn-cool" id="btn-cool">COOL</button>
-        <button class="btn-color btn-gray" id="btn-gray">GRAY SCALE</button>
-      </div>
-    </div>
-
-    <div class="overlay-div"></div>
-
-    <div class="query-element query-modal hidden">
-      <form action="" method="get" class="query-element query-container">
-        <label for="round-query" class="query-element query-label"
-          >What should the grid size be?</label
-        >
-        <p class="query-element query-sublabel">Default: 16x16</p>
-        <input
-          type="number"
-          name="round-query"
-          min="3"
-          max="75"
-          value="16"
-          class="query-element query-input"
+    </main>
+    <footer>
+      <a
+        href="https://github.com/renchester"
+        target="_blank"
+        class="footer-link"
+      >
+        <img
+          src="img/github-icon.png"
+          alt="Github icon"
+          width="25"
+          class="footer-img"
         />
-        <button class="btn query-element btn-query">OK</button>
-      </form>
-    </div>
+        <p class="footer-desc">Developed by Renchester Ramos</p></a
+      >
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>
