@@ -18,6 +18,7 @@ const btnGray = document.querySelector('.btn-gray');
 const btnSpecify = document.querySelector('.btn-specify');
 
 const slider = document.querySelector('.slider');
+const btnBorder = document.querySelector('.btn-border');
 const btnSlider = document.querySelector('.btn-slider');
 const btnEraseBrush = document.querySelector('.btn-brush');
 const btnEraseAll = document.querySelector('.btn-erase');
@@ -128,6 +129,11 @@ function toggleDrawing(e) {
   btnToggle.classList.toggle('btn-active');
 }
 
+function toggleBorder(e) {
+  const pixels = document.querySelectorAll('.pixel');
+  pixels.forEach((pixel) => pixel.classList.toggle('pixel-border'));
+}
+
 ////// Color-related functions
 
 function changeColor(e) {
@@ -181,6 +187,7 @@ btnNew.addEventListener('click', displayModal);
 btnSlider.addEventListener('click', makeCanvas);
 btnQuery.addEventListener('click', makeCanvas);
 overlayDiv.addEventListener('click', makeCanvas);
+btnBorder.addEventListener('click', toggleBorder);
 
 colorsContainer.addEventListener('click', changeColor);
 btnRandom.addEventListener('click', getRandomColor);
