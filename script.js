@@ -9,6 +9,7 @@ const queryModal = document.querySelector('.query-modal');
 const queryInput = document.querySelector('.query-input');
 const warning = document.querySelector('.warning-container');
 
+const btnContainer = document.querySelector('.btn-container');
 const colorsContainer = document.querySelector('.colors-container');
 
 const btnRandom = document.querySelector('.btn-random');
@@ -26,6 +27,10 @@ const btnToggle = document.querySelector('.btn-toggle');
 const btnNew = document.querySelector('.btn-new');
 const btnQuery = document.querySelector('.btn-query');
 
+const bodyEl = document.querySelector('body');
+const btnTheme = document.querySelector('.btn-theme');
+const footerText = document.querySelector('.footer-desc');
+
 // Game states
 let brushState = true;
 let eraseState = false;
@@ -37,9 +42,9 @@ let fillColor = 'rgb(116, 116, 116)';
 function init(size = 16) {
   canvasEl.innerHTML = '';
   for (let i = 1; i <= size ** 2; i++) {
-    const canvasBox = document.createElement('div');
-    canvasBox.classList.add('pixel', `pixel-${i}`);
-    canvasEl.append(canvasBox);
+    const emptyPixel = document.createElement('div');
+    emptyPixel.classList.add('pixel', `pixel-${i}`);
+    canvasEl.append(emptyPixel);
   }
 }
 
@@ -176,6 +181,47 @@ function makeActive(target) {
   target.classList.add('btn-color-active');
 }
 
+// Light Mode
+
+function toggleTheme(e) {
+  e.target.classList.contains('theme--light')
+    ? changeTheme('lightMode', 'darkMode')
+    : changeTheme('darkMode', 'lightMode');
+
+  btnTheme.classList.toggle('theme--light');
+  btnTheme.classList.toggle('theme--dark');
+}
+
+function changeTheme(current, desired) {
+  const buttonsArr = Array.from(btnContainer.children);
+  const colorsArr = Array.from(colorsContainer.children);
+
+  let darkMode = 'rgba(53, 53, 53, 0.9)';
+  let lightMode = 'rgb(255, 249, 237)';
+  let color, other;
+
+  if (desired === 'darkMode') {
+    color = darkMode;
+    other = lightMode;
+  } else {
+    color = lightMode;
+    other = darkMode;
+  }
+
+  bodyEl.style.backgroundColor = other;
+  btnTheme.style.color = color;
+  btnTheme.textContent = `${desired.split('Mode')[0]}_mode`;
+  footerText.style.color = color;
+
+  buttonsArr.forEach(
+    (btn) => (btn.style.boxShadow = `0px 4px 0px 4px ${color}`)
+  );
+
+  colorsArr.forEach(
+    (btn) => (btn.style.boxShadow = `0px 4px 0px 4px ${color}`)
+  );
+}
+
 // Event listeners
 canvasEl.addEventListener('mouseover', fillPixel);
 
@@ -194,6 +240,8 @@ btnRandom.addEventListener('click', getRandomColor);
 btnWarm.addEventListener('click', getWarmColor);
 btnCool.addEventListener('click', getCoolColor);
 btnGray.addEventListener('click', getGrayColor);
+
+btnTheme.addEventListener('click', toggleTheme);
 
 // Initialize game
 init();
