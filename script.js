@@ -87,9 +87,6 @@ function fillPixel(e) {
   }
 
   switch (colorState) {
-    case 'default':
-      pixel.style.backgroundColor = fillColor;
-      break;
     case 'random':
       pixel.style.backgroundColor = getRandomColor();
       break;
@@ -100,7 +97,10 @@ function fillPixel(e) {
       pixel.style.backgroundColor = getCoolColor();
       break;
     case 'gray':
-      pixel.style.backgroundColor = getGrayColor();
+      pixel.style.backgroundColor = fillColor;
+      break;
+    default:
+      pixel.style.backgroundColor = fillColor;
       break;
   }
 }
@@ -148,7 +148,7 @@ function changeColor(e) {
   makeActive(e.target);
 }
 
-function getRandomColor(e) {
+function getRandomColor() {
   const letters = '0123456789ABCDEF';
   let randomColor = '#';
   for (let i = 0; i < 6; i++) {
@@ -158,21 +158,16 @@ function getRandomColor(e) {
   return randomColor;
 }
 
-function getWarmColor(e) {
+function getWarmColor() {
   let color1 = Math.floor(Math.random() * 255);
   let color2 = Math.floor(Math.random() * 100);
   return `rgb(${color1}, ${color2}, 0)`;
 }
 
-function getCoolColor(e) {
+function getCoolColor() {
   let color1 = Math.floor(Math.random() * 200);
   let color2 = Math.floor(Math.random() * 255);
   return `rgb(0, ${color1}, ${color2})`;
-}
-
-function getGrayColor(e) {
-  let alpha = Math.random();
-  return `rgba(0, 0, 0, ${alpha})`;
 }
 
 function makeActive(target) {
@@ -236,10 +231,6 @@ overlayDiv.addEventListener('click', makeCanvas);
 btnBorder.addEventListener('click', toggleBorder);
 
 colorsContainer.addEventListener('click', changeColor);
-btnRandom.addEventListener('click', getRandomColor);
-btnWarm.addEventListener('click', getWarmColor);
-btnCool.addEventListener('click', getCoolColor);
-btnGray.addEventListener('click', getGrayColor);
 
 btnTheme.addEventListener('click', toggleTheme);
 
