@@ -100,6 +100,10 @@ main {
 
 /*  BUTTONS */
 
+button {
+  font-family: 'Poppins', 'Baloo 2', Arial, Helvetica, sans-serif;
+}
+
 .btn-container,
 .colors-container {
   display: flex;
@@ -126,7 +130,6 @@ main {
   text-transform: uppercase;
   text-align: center;
   border: none;
-  font-family: 'Poppins', Arial, Helvetica, sans-serif;
   font-size: 0.9rem;
   font-weight: 900;
   color: rgb(54, 48, 48);
@@ -171,10 +174,10 @@ main {
 
 .slider-label {
   color: white;
-  font-family: 'Poppins', Arial, Helvetica, sans-serif;
-  font-size: 1.75rem;
+  font-family: 'Press Start 2P', 'Baloo 2', Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
   text-align: center;
-  margin-bottom: 0.5em;
+  margin-bottom: 1.4em;
 }
 
 .slider-container {
