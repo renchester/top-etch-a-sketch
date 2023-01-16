@@ -21,12 +21,19 @@ body {
   position: relative;
 }
 
+main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
 /*  CONTAINER */
 
 .container {
   position: relative;
   background-color: var(--primary-color);
-  margin: 5vh auto 0;
+  margin: 0 auto;
   padding: 1.5rem;
   border-radius: 20px;
   width: calc(var(--canvas-dimension) + 6em);
@@ -211,8 +218,8 @@ body {
 .btn-slider {
   position: absolute;
   margin-left: 1.2em;
-  width: 45px;
-  height: 45px;
+  width: 65px;
+  height: 65px;
   border-radius: 50px;
   padding: 0 0.2rem;
   background-color: var(--secondary-color);
@@ -221,13 +228,13 @@ body {
 }
 
 .btn-border {
-  left: 70px;
+  left: 4em;
   text-align: center;
   font-size: 0.6rem;
 }
 
 .btn-slider {
-  right: 70px;
+  right: 2em;
 }
 
 /* QUERY MODAL WINDOW */
@@ -294,9 +301,11 @@ body {
 /* FOOTER */
 
 footer {
+  position: absolute;
+  bottom: 0%;
   margin: auto;
   width: 100%;
-  margin-top: 2.4rem;
+  margin-bottom: 1.5em;
 }
 
 .footer-link {
@@ -331,3 +340,5 @@ footer {
   background-color: rgba(0, 0, 0, 0.65);
   z-index: 2;
 }
+
+/*  MEDIA QUERIES */
